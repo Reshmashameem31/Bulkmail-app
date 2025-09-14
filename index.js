@@ -129,7 +129,10 @@ app.get("/history", async function(req, res) {
     res.send("Error fetching history");
   }
 });
+app.get("/", (req, res) => {
+  res.send("BulkMail backend is running!");
+});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}...`);})
 
-app.listen(5000,function(){
-  console.log("Server Started...")
-})
